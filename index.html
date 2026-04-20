@@ -1,30 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ekaterina Kornishina-Braunfeld</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ekaterina Kornishina-Braunfeld</title>
+  <meta name="description" content="Official website of flutist Ekaterina Kornishina-Braunfeld" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --line: #dddddd;
+      --hero-bg: #000000;
+      --hero-text: #ffffff;
+      --max: 1080px;
+    }
 
-<style>
-body {
-margin:0;
-font-family: Arial;
-background:black;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-text-align:center;
-}
-h1 { font-size:40px; }
-</style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-inner {
+      width: 100%;
+      padding: 0 20px 80px;
+    }
+
+    .hero-content {
+      width: min(100%, 1080px);
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+    }
+
+    .hero p {
+      margin: 24px 0 0;
+      font-size: clamp(18px, 2vw, 24px);
+      color: rgba(255,255,255,0.85);
+    }
+
+    .section {
+      padding: 88px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section:first-of-type {
+      border-top: none;
+    }
+
+    .section-title {
+      margin: 0 0 36px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .subsection {
+      margin-top: 36px;
+    }
+
+    .subsection:first-of-type {
+      margin-top: 0;
+    }
+
+    .subsection h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .repertoire-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .list-block h3 {
+      margin: 0 0 18px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .work-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .work-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 17px;
+    }
+
+    .programme-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .programme-item {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .programme-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .programme-item h4 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .programme-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .media-links {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .media-link {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 18px;
+    }
+
+    .media-link span {
+      color: var(--muted);
+      display: block;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .video-grid iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+
+    .contact-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 760px;
+    }
+
+    .contact-card {
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-card h4 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-card p {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .footer {
+      padding: 40px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .repertoire-grid,
+      .programme-list,
+      .video-grid,
+      .contact-block {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      p,
+      .work-list li,
+      .programme-item p,
+      .contact-card p,
+      .media-link {
+        font-size: 17px;
+      }
+
+      .hero-inner {
+        padding-bottom: 60px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div>
-<h1>Ekaterina Kornishina-Braunfeld</h1>
-<p>Internationally active flutist and pedagogue</p>
-</div>
-</body>
-</html>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Ekaterina Kornishina-Braunfeld</h1>
+        <p>Internationally active flutist and pedagogue.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h2 class="section-title">Biography</h2>
+
+        <div class="bio-grid">
+          <div class="subsection">
+            <h3>Early training</h3>
+            <p>Ekaterina Kornishina-Braunfeld began studying music at the age of four and was a member of the Children’s Choir of the Bolshoi Theatre.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Education</h3>
+            <p>She later entered the Central Music School of the Moscow Tchaikovsky Conservatory, where she studied with Professor Yuri Dolzhikov, and continued her education at the Moscow Tchaikovsky Conservatory under Professor Alexander Golyshev. Her studies were subsequently extended at the Reina Sofía School of Music in Madrid in the class of Jacques Zoon.</p>
+            <p>Her artistic development was further shaped through masterclasses with leading flutists, including Emmanuel Pahud, Felix Renggli, Philippe Bernold, Sophie Cherrier, Andrea Lieberknecht, Vincent Lucas, Davide Formisano, and Shigenori Kudo, as well as through chamber music masterclasses with Wenzel Fuchs (clarinet), Hansjörg Schellenberger (oboe), Alexander Bonduryansky (piano), and Marta Gulyás (piano).</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Early career</h3>
+            <p>Since the age of eleven, Kornishina has appeared as a soloist at international festivals. At fifteen, she made her debut at the Musikverein in Vienna (Brahms-Saal), performing Mozart’s Concerto for Flute and Harp. Between 2011 and 2016, she was a regular participant of the International Summer Academy (ISA) of the Vienna Conservatory, and in 2019 she was selected for the Järvi Academy, where she worked in an intensive orchestral environment with leading international conductors and musicians.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Orchestral and international activity</h3>
+            <p>At the age of eighteen, she was invited by Vladimir Spivakov to join the National Philharmonic Orchestra of Russia as a solo flutist. Since 2019, she has also been a member of the Baltic Sea Philharmonic, an international orchestra performing its programmes entirely from memory.</p>
+            <p>She has also performed as a guest principal flute with orchestras across Europe.</p>
+            <p>She regularly performs at international festivals across Europe, including appearances in France (Auvers-sur-Oise Festival, Festival de Colmar), Germany, Switzerland, Spain, and the Czech Republic.</p>
+            <p>As a soloist, she has appeared with orchestras including the State Academic Symphony Orchestra of Russia (Evgeny Svetlanov), the National Philharmonic Orchestra of Russia, the Moscow Virtuosi, and the Tatarstan Symphony Orchestra.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Chamber music and collaborations</h3>
+            <p>As a soloist and chamber musician, she has collaborated with conductors such as Vladimir Fedoseev, Vladimir Spivakov, Michel Repper, Antony Hermes, and Alexander Sladkovsky, and has performed alongside Andrey Baranov (violin), Bram van Sambeek (bassoon), Boris Andrianov (cello), Dwight Perry (oboe), Yaoguang Zhai (clarinet), Petr Laul (piano), Ilya Gringolts (violin), Nikita Borisoglebsky (violin), Arkady Shilkloper (horn), Edgar Moreau (cello), Dmitry Illarionov (guitar), and Artyom Dervoed (guitar).</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Recordings and media</h3>
+            <p>In 2014, she recorded Johann Sebastian Bach’s Orchestral Suite No. 2 with Vladimir Spivakov and the Moscow Virtuosi.</p>
+            <p>In 2020, she released an album of her own transcriptions of works by Sergei Rachmaninoff for flute and piano on the Melodiya label; following its presentation on Radio France, the album entered the Top Chart.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Contemporary music</h3>
+            <p>Kornishina is also active in the field of contemporary music. Works have been dedicated to her by both established and emerging composers, including Mathias Duplessy, who wrote “Bird in the City” for her and guitarist Dmitry Illarionov, and Artyom Romodanov, who composed “6/3” for flute and string quintet.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Pedagogy and research</h3>
+            <p>Alongside her performance career, she obtained a qualification in counselling psychology, completing a diploma thesis entitled “The Influence of Mass Culture on the Unconscious Regulation of Human Behaviour.”</p>
+            <p>She is the founder of BusyMozart, an international educational project bringing together participants from more than 36 countries and integrating methods of sports psychology into musical training.</p>
+            <p>As a pedagogue, Ekaterina prepares students for admission to leading conservatoires, placing particular emphasis on artistic independence, creativity, and performance confidence.</p>
+            <p>In 2025, at the 20th anniversary of the Stellenbosch Chamber Music Festival (South Africa), she donated a bassoon to a young local student in cooperation with the festival’s director, Nina Schumann, reflecting her commitment to education and support for young musicians.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Current activity</h3>
+            <p>Kornishina is currently focused on her own artistic projects, teaching, and chamber music, and is developing several initiatives, including a new music festival, an experimental recording project, and an international series of masterclasses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="section-title">Repertoire</h2>
+
+        <div class="repertoire-grid">
+          <div class="list-block">
+            <h3>Concertos / Orchestra</h3>
+            <ul class="work-list">
+              <li>W. A. Mozart — Concerto for Flute and Harp in C major, K.299</li>
+              <li>W. A. Mozart — Concerto in D major, K.314</li>
+              <li>P. Benoit — Concerto “Symphonic Tale”, Op. 43a</li>
+              <li>C. Reinecke — Concerto in D major, Op. 283</li>
+              <li>C. Reinecke — Ballade for Flute and Orchestra</li>
+              <li>S. Mercadante — Concerto in E minor</li>
+              <li>A. Vivaldi — Concerto “Il Gardellino”, RV 428</li>
+              <li>J. Haydn — Concerto for Flute</li>
+              <li>M. Weinberg — Concerto for Flute and Orchestra</li>
+              <li>F. Borne / G. Bizet — Carmen Fantasy</li>
+              <li>J. S. Bach — Orchestral Suite No. 2 in B minor, BWV 1067</li>
+              <li>J. S. Bach — Brandenburg Concerto No. 2 in F major, BWV 1047</li>
+              <li>J. S. Bach — Brandenburg Concerto No. 4 in G major, BWV 1049</li>
+            </ul>
+          </div>
+
+          <div class="list-block">
+            <h3>Chamber Music</h3>
+            <ul class="work-list">
+              <li><strong>Flute &amp; Piano</strong></li>
+              <li>F. Schubert — <em>Trockne Blumen</em> (Introduction and Variations, D. 802)</li>
+              <li>F. Poulenc — Sonata for Flute and Piano</li>
+              <li>S. Prokofiev — Sonata in D major, Op. 94</li>
+              <li>C. Reinecke — Sonata “Undine”, Op. 167</li>
+              <li>P. Hindemith — Sonata for Flute and Piano</li>
+              <li>L. Liebermann — Sonata for Flute and Piano, Op. 23</li>
+              <li>C.-M. Widor — Suite for Flute and Piano, Op. 34</li>
+              <li>A. Jolivet — Chant de Linos</li>
+              <li>P. Sancan — Sonatine</li>
+              <li>O. Taktakishvili — Sonata</li>
+              <li>J. N. Hummel — Sonata for Flute and Piano</li>
+              <li>P. Juon — Sonata for Flute and Piano</li>
+              <li><strong>Flute, Cello &amp; Piano</strong></li>
+              <li>L. van Beethoven — Trio in B-flat major, Op. 11</li>
+              <li>C. M. von Weber — Trio in E-flat major, Op. 63</li>
+              <li>P. Gaubert — Trois Aquarelles</li>
+              <li>N. Rota — Trio for Flute, Violin (or Cello) and Piano</li>
+              <li>N. Kapustin — Trio, Op. 86</li>
+              <li>G. Sollima — Trio for Flute, Cello and Piano</li>
+              <li>J. Haydn — Trio for Flute, Cello and Piano</li>
+              <li>J. N. Hummel — Adagio, Variations and Rondo</li>
+              <li><strong>Flute Quartets</strong></li>
+              <li>W. A. Mozart — Flute Quartet in D major, K.285</li>
+              <li>W. A. Mozart — Flute Quartet in G major, K.285a</li>
+              <li>W. A. Mozart — Flute Quartet in C major, K.285b</li>
+              <li>W. A. Mozart — Flute Quartet in A major, K.298</li>
+              <li><strong>Flute &amp; Guitar</strong></li>
+              <li>A. Piazzolla — <em>Histoire du Tango</em></li>
+              <li>M. Duplessy — “Bird in the City”</li>
+              <li>Ravi Shankar — <em>L’aube enchantée sur le Raga Todi</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="section-title">Original Programmes</h2>
+
+        <div class="programme-list">
+          <div class="programme-item">
+            <h4>Stories</h4>
+            <p>Concert for flute, cello, piano and voice.</p>
+          </div>
+          <div class="programme-item">
+            <h4>The Flute Through Time</h4>
+            <p>Lecture-concert exploring the instrument across musical epochs.</p>
+          </div>
+          <div class="programme-item">
+            <h4>Birds and Music</h4>
+            <p>Lecture-concert dedicated to bird-inspired repertoire.</p>
+          </div>
+          <div class="programme-item">
+            <h4>Folk Traditions in Classical Music</h4>
+            <p>Lecture-concert exploring the influence of folk music on classical repertoire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="section-title">Media
