@@ -12,7 +12,6 @@
       --text: #111111;
       --muted: #6b6b6b;
       --line: #e7e7e7;
-      --soft: #f7f7f7;
       --max: 1180px;
       --text-width: 760px;
     }
@@ -55,7 +54,7 @@
     .hero {
       min-height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,.30), rgba(0,0,0,.40)),
+        linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.25)),
         url('6.jpeg') center center / cover no-repeat;
       color: #fff;
       display: flex;
@@ -80,13 +79,15 @@
       line-height: .95;
       letter-spacing: -0.03em;
       max-width: 820px;
+      text-shadow: 0 8px 24px rgba(0,0,0,.35);
     }
 
     .hero-tag {
       margin-top: 18px;
       font-size: clamp(18px, 2vw, 24px);
-      color: rgba(255,255,255,.92);
+      color: rgba(255,255,255,.95);
       max-width: 520px;
+      text-shadow: 0 4px 18px rgba(0,0,0,.25);
     }
 
     .section {
@@ -105,12 +106,6 @@
 
     .bio {
       width: min(100%, var(--text-width));
-    }
-
-    .bio-photo {
-      width: 240px;
-      margin: 0 0 34px;
-      border: 1px solid var(--line);
     }
 
     .subsection {
@@ -135,11 +130,32 @@
       font-size: 18px;
     }
 
+    .fullwidth-photo {
+      width: 100vw;
+      margin: 64px 0;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+    }
+
+    .fullwidth-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .bio-photo-inline {
+      display: block;
+      width: 100%;
+      margin: 48px 0;
+      height: auto;
+    }
+
     .teaching-image {
       margin: 28px 0 30px;
       width: 100%;
-      max-width: 760px;
-      border: 1px solid var(--line);
+      height: auto;
+      display: block;
     }
 
     .repertoire-grid {
@@ -236,6 +252,11 @@
       gap: 24px;
     }
 
+    .video-card {
+      background: #000;
+      overflow: hidden;
+    }
+
     .video-card iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -282,10 +303,6 @@
         padding: 64px 0;
       }
 
-      .bio-photo {
-        width: 180px;
-      }
-
       .repertoire-grid,
       .programmes,
       .video-grid,
@@ -330,8 +347,6 @@
         <h2 class="section-title">Biography</h2>
 
         <div class="bio">
-          <img src="15.jpeg" alt="Ekaterina Kornishina-Braunfeld" class="bio-photo" />
-
           <div class="subsection">
             <h3>Early training</h3>
             <p>Ekaterina Kornishina-Braunfeld began studying music at the age of four and was a member of the Children’s Choir of the Bolshoi Theatre.</p>
@@ -354,6 +369,11 @@
           <div class="subsection">
             <h3>Orchestral and international activity</h3>
             <p>At the age of eighteen, she was invited by Vladimir Spivakov to join the National Philharmonic Orchestra of Russia as principal flute.</p>
+
+            <div class="fullwidth-photo">
+              <img src="15.jpeg" alt="Ekaterina Kornishina-Braunfeld">
+            </div>
+
             <p>She has also performed as a guest principal flute with orchestras across Europe.</p>
             <p>As a soloist, she has appeared with orchestras including the State Academic Symphony Orchestra of Russia (Evgeny Svetlanov), the National Philharmonic Orchestra of Russia, the Moscow Virtuosi, and the Tatarstan Symphony Orchestra.</p>
           </div>
@@ -367,6 +387,8 @@
             <h3>Recordings and media</h3>
             <p>In 2014, she recorded Johann Sebastian Bach’s Orchestral Suite No. 2 with Vladimir Spivakov and the Moscow Virtuosi.</p>
             <p>In 2020, she released an album of her own transcriptions of works by Sergei Rachmaninoff for flute and piano on the Melodiya label. The album entered the Top Chart following its presentation on Radio France.</p>
+
+            <img src="2642-eng-v2.jpeg" alt="Ekaterina Kornishina-Braunfeld" class="bio-photo-inline" />
           </div>
 
           <div class="subsection">
@@ -374,11 +396,12 @@
             <p>Kornishina is also active in the field of contemporary music. Works have been dedicated to her by both established and emerging composers, including Mathias Duplessy, who wrote <em>Bird in the City</em> for her and guitarist Dmitry Illarionov, and Artyom Romodanov, who composed <em>6/3</em> for flute and string quintet.</p>
           </div>
 
-          <img src="IMG_9415.jpeg" alt="Ekaterina teaching" class="teaching-image" />
-
           <div class="subsection">
             <h3>Pedagogy and research</h3>
             <p>Alongside her performance career, she obtained a qualification in counselling psychology, completing a diploma thesis entitled “The Influence of Mass Culture on the Unconscious Regulation of Human Behaviour.”</p>
+
+            <img src="IMG_9415.jpeg" alt="Ekaterina teaching" class="teaching-image" />
+
             <p>She is the founder of BusyMozart, an international educational project bringing together participants from more than 36 countries and integrating methods of sports psychology into musical training.</p>
             <p>As a pedagogue, Ekaterina prepares students for admission to leading conservatoires, with a particular emphasis on artistic independence, creativity, and performance confidence.</p>
             <p>In 2025, at the 20th anniversary of the Stellenbosch Chamber Music Festival (South Africa), she donated a bassoon to a young local student in cooperation with the festival’s director, Nina Schumann.</p>
@@ -513,16 +536,43 @@
 
         <div class="video-grid">
           <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/5f3LlNkxcQ4" title="YouTube video 1" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/5f3LlNkxcQ4?rel=0"
+              title="YouTube video 1"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
+
           <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/BNhhfr0qZ9A" title="YouTube video 2" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/BNhhfr0qZ9A?rel=0"
+              title="YouTube video 2"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
+
           <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/b6u48-YLMfg" title="YouTube video 3" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/b6u48-YLMfg?rel=0"
+              title="YouTube video 3"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
+
           <div class="video-card">
-            <iframe src="https://www.youtube.com/embed/oJytPvHpjR0" title="YouTube video 4" allowfullscreen></iframe>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/oJytPvHpjR0?rel=0"
+              title="YouTube video 4"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
