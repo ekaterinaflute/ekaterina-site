@@ -1,195 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Ekaterina Kornishina-Braunfeld</title>
-
-  <style>
-    :root {
-      --text: #111;
-      --muted: #777;
-      --line: #e8e8e8;
-      --max: 1100px;
-      --text-width: 720px;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* HERO */
-
-    .hero {
-      height: 100vh;
-      background: url('6.jpeg') center/cover;
-      display: flex;
-      align-items: flex-end;
-      color: white;
-    }
-
-    .hero-inner {
-      padding: 40px 20px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: 64px;
-      margin: 0;
-    }
-
-    .hero p {
-      margin-top: 10px;
-      font-size: 18px;
-    }
-
-    /* SECTION */
-
-    .section {
-      padding: 70px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-title {
-      font-family: Georgia, serif;
-      font-size: 44px;
-      margin-bottom: 30px;
-    }
-
-    .bio {
-      max-width: var(--text-width);
-    }
-
-    .subsection {
-      margin-top: 34px;
-    }
-
-    .subsection h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0 0 8px;
-    }
-
-    .subsection p {
-      margin: 0 0 14px;
-      font-size: 17px;
-    }
-
-    .photo {
-      margin: 20px 0 36px;
-    }
-
-    /* GRID */
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border: none;
-    }
-
-    @media (min-width: 900px) {
-      .video-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-<header class="hero">
-  <div class="hero-inner">
-    <h1>Ekaterina Kornishina-Braunfeld</h1>
-    <p>Flutist and pedagogue</p>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="images/6.jpeg" alt="Ekaterina Kornishina-Braunfeld" class="hero-image" />
+    <div class="hero-overlay"></div>
   </div>
-</header>
 
-<section class="section">
-  <div class="wrap">
-
-    <h2 class="section-title">Biography</h2>
-
-    <div class="bio">
-
-      <div class="subsection">
-        <h3>Early training</h3>
-        <p>Ekaterina began studying music at the age of four and was a member of the Children’s Choir of the Bolshoi Theatre.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>Education</h3>
-        <p>She studied at the Moscow Tchaikovsky Conservatory and later at the Reina Sofía School of Music in Madrid.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>Orchestral activity</h3>
-        <p>At the age of eighteen, she joined the National Philharmonic Orchestra of Russia as principal flute.</p>
-
-        <img src="15.jpeg" class="photo">
-
-        <p>She has performed as a guest principal flute with orchestras across Europe.</p>
-      </div>
-
-      <div class="subsection">
-        <h3>Recordings</h3>
-        <p>In 2020 she released a Rachmaninoff album on the Melodiya label.</p>
-
-        <img src="2642-eng-v2.jpeg" class="photo">
-      </div>
-
-      <div class="subsection">
-        <h3>Pedagogy</h3>
-
-        <img src="IMG_9415.jpeg" class="photo">
-
-        <p>She is the founder of BusyMozart, an international educational project.</p>
-      </div>
-
-    </div>
+  <div class="hero-content">
+    <p class="hero-kicker">Flutist</p>
+    <h1>Ekaterina<br>Kornishina-Braunfeld</h1>
   </div>
 </section>
+/* HERO */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 760px;
+  overflow: hidden;
+  background: #111;
+}
 
-<section class="section">
-  <div class="wrap">
-    <h2 class="section-title">Media</h2>
+.hero-media {
+  position: absolute;
+  inset: 0;
+}
 
-    <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/5f3LlNkxcQ4"></iframe>
-      <iframe src="https://www.youtube.com/embed/BNhhfr0qZ9A"></iframe>
-      <iframe src="https://www.youtube.com/embed/b6u48-YLMfg"></iframe>
-      <iframe src="https://www.youtube.com/embed/oJytPvHpjR0"></iframe>
-    </div>
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+  display: block;
+  filter: saturate(96%) contrast(102%);
+}
 
-  </div>
-</section>
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.18) 32%, rgba(0, 0, 0, 0.06) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.03) 48%, rgba(0, 0, 0, 0.00) 100%);
+}
 
-</body>
-</html>
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 56px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.hero-kicker {
+  margin: 0 0 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 760px;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: clamp(3.2rem, 6vw, 5.6rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: #f7f3ee;
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero-image {
+    object-position: center 20%;
+  }
+
+  .hero-content {
+    padding: 0 28px 42px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.4rem, 10vw, 4.2rem);
+    line-height: 0.95;
+  }
+}
