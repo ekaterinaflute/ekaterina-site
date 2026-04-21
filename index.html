@@ -107,19 +107,6 @@
     .bio {
       width: min(100%, var(--text-width));
     }
-.bio-photo-inline {
-  display: block;
-
-  width: calc(100% + 80px);
-  margin-left: -40px;
-
-  margin-top: 64px;
-  margin-bottom: 64px;
-
-  height: auto;
-}
-
-}
 
     .subsection {
       margin-top: 42px;
@@ -143,11 +130,32 @@
       font-size: 18px;
     }
 
+    .fullwidth-photo {
+      width: 100vw;
+      margin: 64px 0;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+    }
+
+    .fullwidth-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .bio-photo-inline {
+      display: block;
+      width: 100%;
+      margin: 48px 0;
+      height: auto;
+    }
+
     .teaching-image {
       margin: 28px 0 30px;
       width: 100%;
-      max-width: 760px;
-      border: 1px solid var(--line);
+      height: auto;
+      display: block;
     }
 
     .repertoire-grid {
@@ -295,10 +303,6 @@
         padding: 64px 0;
       }
 
-      .bio-photo-inline {
-        width: 180px;
-      }
-
       .repertoire-grid,
       .programmes,
       .video-grid,
@@ -364,7 +368,12 @@
 
           <div class="subsection">
             <h3>Orchestral and international activity</h3>
-            <p>At the age of eighteen, she was invited by Vladimir Spivakov to join the National Philharmonic Orchestra of Russia as principal flute.<img src="15.jpeg" alt="Ekaterina Kornishina-Braunfeld" class="bio-photo-inline" /></p>
+            <p>At the age of eighteen, she was invited by Vladimir Spivakov to join the National Philharmonic Orchestra of Russia as principal flute.</p>
+
+            <div class="fullwidth-photo">
+              <img src="15.jpeg" alt="Ekaterina Kornishina-Braunfeld">
+            </div>
+
             <p>She has also performed as a guest principal flute with orchestras across Europe.</p>
             <p>As a soloist, she has appeared with orchestras including the State Academic Symphony Orchestra of Russia (Evgeny Svetlanov), the National Philharmonic Orchestra of Russia, the Moscow Virtuosi, and the Tatarstan Symphony Orchestra.</p>
           </div>
@@ -378,6 +387,8 @@
             <h3>Recordings and media</h3>
             <p>In 2014, she recorded Johann Sebastian Bach’s Orchestral Suite No. 2 with Vladimir Spivakov and the Moscow Virtuosi.</p>
             <p>In 2020, she released an album of her own transcriptions of works by Sergei Rachmaninoff for flute and piano on the Melodiya label. The album entered the Top Chart following its presentation on Radio France.</p>
+
+            <img src="2642-eng-v2.jpeg" alt="Ekaterina Kornishina-Braunfeld" class="bio-photo-inline" />
           </div>
 
           <div class="subsection">
