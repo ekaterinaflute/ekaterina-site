@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Екатерина Корнишина-Браунфельд | Флейтистка и педагог</title>
+  <meta name="description" content="Официальный сайт Екатерины Корнишиной-Браунфельд: биография, медиа, репертуар, авторские программы и контакты." />
+  <meta name="theme-color" content="#111111" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #6b6b6b;
+      --line: #e7e7e7;
+      --max: 1180px;
+      --text-width: 760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.25)),
+        url('../6.jpeg') center center / cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-inner {
+      width: 100%;
+      padding: 0 24px 56px;
+    }
+
+    .hero-content {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      max-width: 820px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: .95;
+      letter-spacing: -0.03em;
+      max-width: 820px;
+      text-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+
+    .hero-tag {
+      margin-top: 18px;
+      font-size: clamp(18px, 2vw, 24px);
+      color: rgba(255,255,255,.95);
+      max-width: 820px;
+    }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-title {
+      margin: 0 0 36px;
+      padding-bottom: 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #dcdcdc;
+    }
+
+    .bio {
+      width: min(100%, var(--text-width));
+    }
+
+    .subsection {
+      margin-top: 42px;
+    }
+
+    .subsection:first-of-type {
+      margin-top: 0;
+    }
+
+    .subsection h3 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .subsection p {
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
+
+    .bio-photo-inline {
+      display: block;
+      width: 100%;
+      margin: 48px 0;
+      height: auto;
+    }
+
+    .teaching-image {
+      margin: 28px 0 30px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .repertoire-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .rep-col h3 {
+      margin: 0 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .rep-subcat {
+      margin-top: 32px;
+    }
+
+    .rep-subcat:first-of-type {
+      margin-top: 0;
+    }
+
+    .rep-subcat h4 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .02em;
+    }
+
+    .work-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .work-list li {
+      margin: 0;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f1f1;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .programmes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 44px;
+    }
+
+    .programme-item {
+      padding-top: 18px;
+    }
+
+    .programme-item h3 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .programme-item p {
+      margin: 0;
+      font-size: 17px;
+      color: var(--muted);
+    }
+
+    .media-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 0 0 28px;
+    }
+
+    .media-links a {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .media-links a:hover {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .video-card {
+      background: #000;
+      overflow: hidden;
+    }
+
+    .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 760px;
+    }
+
+    .contact-card {
+      padding-top: 18px;
+    }
+
+    .contact-card h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-card p {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .footer {
+      padding: 34px 0 54px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .section {
+        padding: 64px 0;
+      }
+
+      .repertoire-grid,
+      .programmes,
+      .video-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subsection h3,
+      .rep-col h3,
+      .programme-item h3 {
+        font-size: 24px;
+      }
+
+      .subsection p {
+        font-size: 17px;
+      }
+
+      .hero-inner {
+        padding-bottom: 40px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Екатерина Корнишина-Браунфельд</h1>
+        <div class="hero-tag">Флейтистка и педагог</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="biography">
+      <div class="wrap">
+        <h2 class="section-title">Биография</h2>
+
+        <div class="bio">
+          <div class="subsection">
+            <h3>Ранние годы</h3>
+            <p>Екатерина Корнишина-Браунфельд начала заниматься музыкой в возрасте четырёх лет и была участницей Детского хора Большого театра.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Образование</h3>
+            <p>Затем она поступила в Центральную музыкальную школу при Московской государственной консерватории имени П. И. Чайковского, где обучалась в классе профессора Юрия Должикова, а позже продолжила образование в Московской государственной консерватории в классе профессора Александра Голышева.</p>
+            <p>Позднее она также обучалась в Высшей школе музыки имени королевы Софии в Мадриде в классе Жака Зуна.</p>
+            <p>Её художественное развитие формировалось в том числе благодаря мастер-классам ведущих флейтистов — Эммануэля Паю, Феликса Ренггли, Филиппа Бернольда, Софи Шеррье, Андреа Либеркнехт, Венсана Люка, Давиде Формизано и Сигэнори Кудо, а также мастер-классам по камерной музыке с Венцелем Фуксом (кларнет), Хансйоргом Шелленбергером (гобой), Александром Бондурянским (фортепиано) и Мартой Гуляш (фортепиано).</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Начало карьеры</h3>
+            <p>С одиннадцати лет Екатерина выступает как солистка на международных фестивалях.</p>
+            <p>В пятнадцать лет она дебютировала в венском Musikverein (Brahms-Saal), исполнив Концерт для флейты и арфы Моцарта.</p>
+            <p>В 2011–2016 годах она была постоянной участницей Международной летней академии Венской консерватории (ISA), а в 2019 году была приглашена в Järvi Academy.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Оркестровая и международная деятельность</h3>
+            <p>В восемнадцать лет по приглашению Владимира Спивакова она вошла в состав Национального филармонического оркестра России в качестве первой флейты.</p>
+
+            <img src="../15.jpeg" alt="Екатерина Корнишина-Браунфельд" class="bio-photo-inline">
+
+            <p>Она также выступала в качестве приглашённой первой флейты с оркестрами в разных странах Европы.</p>
+            <p>Как солистка, она выступала с оркестрами, среди которых Государственный академический симфонический оркестр России имени Е. Ф. Светланова, Национальный филармонический оркестр России, оркестр «Виртуозы Москвы» и Симфонический оркестр Татарстана.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Камерная музыка и сотрудничество</h3>
+            <p>Как солистка, Екатерина сотрудничала с дирижёрами Владимиром Федосеевым, Владимиром Спиваковым, Мишелем Реппером, Энтони Гермесом и Александром Сладковским, а также выступала как камерный музыкант с Андреем Барановым (скрипка), Брамом ван Самбеком (фагот), Борисом Андриановым (виолончель), Дуайтом Перри (гобой), Яогуаном Чжаем (кларнет), Петром Лаулом (фортепиано), Ильёй Грингольцем (скрипка), Никитой Борисоглебским (скрипка), Аркадием Шилклопером (валторна), Эдгаром Моро (виолончель), Дмитрием Илларионовым (гитара) и Артёмом Дервоедом (гитара).</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Записи и медиа</h3>
+            <p>В 2014 году Екатерина записала Вторую оркестровую сюиту Иоганна Себастьяна Баха с Владимиром Спиваковым и оркестром «Виртуозы Москвы».</p>
+            <p>В 2020 году на лейбле «Мелодия» вышел альбом её собственных транскрипций произведений Сергея Рахманинова для флейты и фортепиано; после презентации на Radio France альбом вошёл в Top Chart.</p>
+
+            <img src="../2642-eng-v2.jpeg" alt="Обложка альбома" class="bio-photo-inline" />
+          </div>
+
+          <div class="subsection">
+            <h3>Современная музыка</h3>
+            <p>Екатерина активно работает в области современной музыки. Ей посвящены произведения как признанных, так и молодых композиторов, среди которых Маттиас Дюплесси, написавший <em>Bird in the City</em> для неё и гитариста Дмитрия Илларионова, и Артём Ромоданов, автор произведения <em>6/3</em> для флейты и струнного квинтета.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Педагогика и исследовательская деятельность</h3>
+            <p>Параллельно с исполнительской карьерой Екатерина получила квалификацию в области консультативной психологии, защитив дипломную работу на тему «Влияние массовой культуры на бессознательную регуляцию поведения человека».</p>
+
+            <img src="../IMG_9415.jpeg" alt="Екатерина Корнишина-Браунфельд" class="teaching-image" />
+
+            <p>Она является основателем BusyMozart — международного образовательного проекта, объединяющего участников из более чем 36 стран и интегрирующего методы спортивной психологии в музыкальное обучение.</p>
+            <p>Как педагог, Екатерина готовит студентов к поступлению в ведущие консерватории, уделяя особое внимание художественной самостоятельности, креативности и сценической уверенности.</p>
+            <p>В 2025 году, во время 20-летия Stellenbosch Chamber Music Festival (Южная Африка), в сотрудничестве с директором фестиваля Ниной Шуман она подарила фагот молодой местной ученице.</p>
+          </div>
+
+          <div class="subsection">
+            <h3>Текущая деятельность</h3>
+            <p>В настоящее время Екатерина сосредоточена на собственных художественных проектах, преподавании и камерной музыке и развивает ряд новых инициатив, включая создание музыкального фестиваля, экспериментальный звукозаписывающий проект и международную серию мастер-классов.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="media">
+      <div class="wrap">
+        <h2 class="section-title">Медиа</h2>
+
+        <div class="media-links">
+          <a href="https://youtube.com/@ekaterinaflute?si=4VjWwksGN1GZ3gYm" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/katekornish?igsh=cjgzNGw3d2xranVi&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+
+        <div class="video-grid">
+          <div class="video-card">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/5f3LlNkxcQ4?rel=0"
+              title="YouTube video 1"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="video-card">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/BNhhfr0qZ9A?rel=0"
+              title="YouTube video 2"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="video-card">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/b6u48-YLMfg?rel=0"
+              title="YouTube video 3"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+
+          <div class="video-card">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/oJytPvHpjR0?rel=0"
+              title="YouTube video 4"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="repertoire">
+      <div class="wrap">
+        <h2 class="section-title">Репертуар</h2>
+
+        <div class="repertoire-grid">
+          <div class="rep-col">
+            <h3>Концерты / Оркестр</h3>
+            <ul class="work-list">
+              <li>В. А. Моцарт — Концерт для флейты и арфы до мажор, K.299</li>
+              <li>В. А. Моцарт — Концерт ре мажор, K.314</li>
+              <li>П. Бенуа — Концерт «Симфоническая сказка», Op. 43a</li>
+              <li>К. Райнеке — Концерт ре мажор, Op. 283</li>
+              <li>К. Райнеке — Баллада для флейты с оркестром</li>
+              <li>С. Меркаданте — Концерт ми минор</li>
+              <li>А. Вивальди — Концерт «Il Gardellino», RV 428</li>
+              <li>Й. Гайдн — Концерт для флейты</li>
+              <li>М. Вайнберг — Концерт для флейты с оркестром</li>
+              <li>Ф. Борн / Ж. Бизе — Фантазия на темы из «Кармен»</li>
+              <li>И. С. Бах — Оркестровая сюита № 2 си минор, BWV 1067</li>
+              <li>И. С. Бах — Бранденбургский концерт № 2 фа мажор, BWV 1047</li>
+              <li>И. С. Бах — Бранденбургский концерт № 4 соль мажор, BWV 1049</li>
+            </ul>
+          </div>
+
+          <div class="rep-col">
+            <h3>Камерная музыка</h3>
+
+            <div class="rep-subcat">
+              <h4>Флейта и фортепиано</h4>
+              <ul class="work-list">
+                <li>Ф. Шуберт — <em>Trockne Blumen</em></li>
+                <li>Ф. Пуленк — Соната для флейты и фортепиано</li>
+                <li>С. Прокофьев — Соната ре мажор, Op. 94</li>
+                <li>К. Райнеке — Соната «Ундина», Op. 167</li>
+                <li>П. Хиндемит — Соната для флейты и фортепиано</li>
+                <li>Л. Либерман — Соната для флейты и фортепиано, Op. 23</li>
+                <li>Ш.-М. Видор — Сюита для флейты и фортепиано, Op. 34</li>
+                <li>А. Жоливе — Chant de Linos</li>
+                <li>П. Санкан — Sonatine</li>
+                <li>О. Тактакишвили — Соната</li>
+                <li>И. Н. Гуммель — Соната для флейты и фортепиано</li>
+                <li>П. Жюон — Соната для флейты и фортепиано</li>
+              </ul>
+            </div>
+
+            <div class="rep-subcat">
+              <h4>Флейта, виолончель и фортепиано</h4>
+              <ul class="work-list">
+                <li>Л. ван Бетховен — Трио си-бемоль мажор, Op. 11</li>
+                <li>К. М. фон Вебер — Трио ми-бемоль мажор, Op. 63</li>
+                <li>П. Гобер — Trois Aquarelles</li>
+                <li>Н. Рота — Трио для флейты, скрипки (или виолончели) и фортепиано</li>
+                <li>Н. Капустин — Трио, Op. 86</li>
+                <li>Дж. Соллима — Трио для флейты, виолончели и фортепиано</li>
+                <li>Й. Гайдн — Трио для флейты, виолончели и фортепиано</li>
+                <li>И. Н. Гуммель — Adagio, Variations and Rondo</li>
+              </ul>
+            </div>
+
+            <div class="rep-subcat">
+              <h4>Флейтовые квартеты</h4>
+              <ul class="work-list">
+                <li>В. А. Моцарт — Квартет для флейты ре мажор, K.285</li>
+                <li>В. А. Моцарт — Квартет для флейты соль мажор, K.285a</li>
+                <li>В. А. Моцарт — Квартет для флейты до мажор, K.285b</li>
+                <li>В. А. Моцарт — Квартет для флейты ля мажор, K.298</li>
+              </ul>
+            </div>
+
+            <div class="rep-subcat">
+              <h4>Флейта и гитара</h4>
+              <ul class="work-list">
+                <li>А. Пьяццолла — <em>Histoire du Tango</em></li>
+                <li>М. Дюплесси — <em>Bird in the City</em></li>
+                <li>Рави Шанкар — <em>L’aube enchantée sur le Raga Todi</em></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programmes">
+      <div class="wrap">
+        <h2 class="section-title">Авторские программы</h2>
+
+        <div class="programmes">
+          <div class="programme-item">
+            <h3>Stories</h3>
+            <p>Концерт для флейты, виолончели, фортепиано и голоса</p>
+          </div>
+
+          <div class="programme-item">
+            <h3>Флейта сквозь время</h3>
+            <p>Лекция-концерт, посвящённая истории инструмента в разных музыкальных эпохах</p>
+          </div>
+
+          <div class="programme-item">
+            <h3>Птицы и музыка</h3>
+            <p>Лекция-концерт, посвящённая репертуару, вдохновлённому образом птиц</p>
+          </div>
+
+          <div class="programme-item">
+            <h3>Народные традиции в классической музыке</h3>
+            <p>Лекция-концерт о влиянии народной музыки на классический репертуар</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Контакты</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Концерты / сотрудничество</h3>
+            <p>Daniel Lefèvre</p>
+            <p><a href="mailto:daniel.lefevre.management@gmail.com">daniel.lefevre.management@gmail.com</a></p>
+          </div>
+
+          <div class="contact-card">
+            <h3>Уроки</h3>
+            <p>Ekaterina Kornishina</p>
+            <p><a href="mailto:kornishina.lessons@gmail.com">kornishina.lessons@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      Официальный сайт Екатерины Корнишиной-Браунфельд
+    </div>
+  </footer>
+
+</body>
+</html>
