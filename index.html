@@ -363,6 +363,17 @@
   .hero h1 {
     max-width: 100%;
   }
+
+  .rep-col:first-child {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  .rep-col:first-child {
+    position: static;
+  }
 }
   
   </style>
@@ -527,7 +538,7 @@
         <h2 class="section-title">Repertoire</h2>
 
         <div class="repertoire-grid">
-          <div class="rep-col" style="position: sticky; top: 2rem;">
+          <div class="rep-col">
             <h3>Concertos / Orchestra</h3>
             <ul class="work-list">
               <li>W. A. Mozart — Concerto for Flute and Harp in C major, K.299</li>
