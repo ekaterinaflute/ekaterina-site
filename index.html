@@ -220,18 +220,31 @@
       font-size: 17px;
       color: var(--muted);
     }
-.media-links a {
-  display: inline-block;
-  padding: 12px 18px;
 
-  border: 1px solid var(--line);
-  background: transparent;
+     .media-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 0 0 28px;
+    }
 
-  color: var(--text);
-  font-weight: 500;
+    .media-links a {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
 
-  transition: all 0.2s ease;
-}
+    .media-links a:hover {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
 
     .video-grid {
       display: grid;
