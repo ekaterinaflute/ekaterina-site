@@ -158,21 +158,7 @@
       display: block;
     }
 
-    .repertoire-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .rep-col h3 {
-      margin: 0 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
+   
 
     .rep-subcat {
       margin-top: 32px;
@@ -335,12 +321,52 @@
   color: #000;
 }
 
+.repertoire-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rep-item {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.rep-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.rep-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.rep-item summary::after {
+  content: "+";
+  float: right;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.rep-item[open] summary::after {
+  content: "−";
+}
+
+.rep-item .work-list,
+.rep-item .rep-subcat {
+  margin-top: 22px;
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 64px 0;
   }
 
-  .repertoire-grid,
   .programmes,
   .video-grid,
   .contact-grid {
@@ -348,8 +374,8 @@
   }
 
   .subsection h3,
-  .rep-col h3,
-  .programme-item h3 {
+  .programme-item h3,
+  .rep-item summary {
     font-size: 24px;
   }
 
@@ -363,17 +389,6 @@
 
   .hero h1 {
     max-width: 100%;
-  }
-
-  .rep-col:first-child {
-  position: sticky;
-  top: 2rem;
-  align-self: start;
-}
-
-@media (max-width: 900px) {
-  .rep-col:first-child {
-    position: static;
   }
 }
   
@@ -535,85 +550,88 @@
       </div>
     </section>
 <section class="section" id="repertoire">
-      <div class="wrap">
-        <h2 class="section-title">Repertoire</h2>
+  <div class="wrap">
+    <h2 class="section-title">Repertoire</h2>
 
-        <div class="repertoire-grid">
-          <div class="rep-col">
-            <h3>Concertos / Orchestra</h3>
-            <ul class="work-list">
-              <li>W. A. Mozart — Concerto for Flute and Harp in C major, K.299</li>
-              <li>W. A. Mozart — Concerto in D major, K.314</li>
-              <li>P. Benoit — Concerto “Symphonic Tale”, Op. 43a</li>
-              <li>C. Reinecke — Concerto in D major, Op. 283</li>
-              <li>C. Reinecke — Ballade for Flute and Orchestra</li>
-              <li>S. Mercadante — Concerto in E minor</li>
-              <li>A. Vivaldi — Concerto “Il Gardellino”, RV 428</li>
-              <li>J. Haydn — Concerto for Flute</li>
-              <li>M. Weinberg — Concerto for Flute and Orchestra</li>
-              <li>F. Borne / G. Bizet — Carmen Fantasy</li>
-              <li>J. S. Bach — Orchestral Suite No. 2 in B minor, BWV 1067</li>
-              <li>J. S. Bach — Brandenburg Concerto No. 2 in F major, BWV 1047</li>
-              <li>J. S. Bach — Brandenburg Concerto No. 4 in G major, BWV 1049</li>
-            </ul>
-          </div>
+    <div class="repertoire-accordion">
 
-          <div class="rep-col">
-            <h3>Chamber Music</h3>
+      <details class="rep-item">
+        <summary>Concertos / Orchestra</summary>
+        <ul class="work-list">
+          <li>W. A. Mozart — Concerto for Flute and Harp in C major, K.299</li>
+          <li>W. A. Mozart — Concerto in D major, K.314</li>
+          <li>P. Benoit — Concerto “Symphonic Tale”, Op. 43a</li>
+          <li>C. Reinecke — Concerto in D major, Op. 283</li>
+          <li>C. Reinecke — Ballade for Flute and Orchestra</li>
+          <li>S. Mercadante — Concerto in E minor</li>
+          <li>A. Vivaldi — Concerto “Il Gardellino”, RV 428</li>
+          <li>J. Haydn — Concerto for Flute</li>
+          <li>M. Weinberg — Concerto for Flute and Orchestra</li>
+          <li>F. Borne / G. Bizet — Carmen Fantasy</li>
+          <li>J. S. Bach — Orchestral Suite No. 2 in B minor, BWV 1067</li>
+          <li>J. S. Bach — Brandenburg Concerto No. 2 in F major, BWV 1047</li>
+          <li>J. S. Bach — Brandenburg Concerto No. 4 in G major, BWV 1049</li>
+        </ul>
+      </details>
 
-            <div class="rep-subcat">
-              <h4>Flute &amp; Piano</h4>
-              <ul class="work-list">
-                <li>F. Schubert — <em>Trockne Blumen</em> (Introduction and Variations, D. 802)</li>
-                <li>F. Poulenc — Sonata for Flute and Piano</li>
-                <li>S. Prokofiev — Sonata in D major, Op. 94</li>
-                <li>C. Reinecke — Sonata “Undine”, Op. 167</li>
-                <li>P. Hindemith — Sonata for Flute and Piano</li>
-                <li>L. Liebermann — Sonata for Flute and Piano, Op. 23</li>
-                <li>C.-M. Widor — Suite for Flute and Piano, Op. 34</li>
-                <li>A. Jolivet — Chant de Linos</li>
-                <li>P. Sancan — Sonatine</li>
-                <li>O. Taktakishvili — Sonata</li>
-                <li>J. N. Hummel — Sonata for Flute and Piano</li>
-                <li>P. Juon — Sonata for Flute and Piano</li>
-              </ul>
-            </div>
+      <details class="rep-item">
+        <summary>Chamber Music</summary>
 
-            <div class="rep-subcat">
-              <h4>Flute, Cello &amp; Piano</h4>
-              <ul class="work-list">
-                <li>L. van Beethoven — Trio in B-flat major, Op. 11</li>
-                <li>C. M. von Weber — Trio in E-flat major, Op. 63</li>
-                <li>P. Gaubert — Trois Aquarelles</li>
-                <li>N. Rota — Trio for Flute, Violin (or Cello) and Piano</li>
-                <li>N. Kapustin — Trio, Op. 86</li>
-                <li>G. Sollima — Trio for Flute, Cello and Piano</li>
-                <li>J. Haydn — Trio for Flute, Cello and Piano</li>
-                <li>J. N. Hummel — Adagio, Variations and Rondo</li>
-              </ul>
-            </div>
-
-            <div class="rep-subcat">
-              <h4>Flute Quartets</h4>
-              <ul class="work-list">
-                <li>W. A. Mozart — Flute Quartet in D major, K.285</li>
-                <li>W. A. Mozart — Flute Quartet in G major, K.285a</li>
-                <li>W. A. Mozart — Flute Quartet in C major, K.285b</li>
-                <li>W. A. Mozart — Flute Quartet in A major, K.298</li>
-              </ul>
-            </div>
-
-            <div class="rep-subcat">
-              <h4>Flute &amp; Guitar</h4>
-              <ul class="work-list">
-                <li>A. Piazzolla — <em>Histoire du Tango</em></li>
-                <li>M. Duplessy — “Bird in the City”</li>
-                <li>Ravi Shankar — <em>L’aube enchantée sur le Raga Todi</em></li>
-              </ul>
-            </div>
-          </div>
+        <div class="rep-subcat">
+          <h4>Flute &amp; Piano</h4>
+          <ul class="work-list">
+            <li>F. Schubert — <em>Trockne Blumen</em> (Introduction and Variations, D. 802)</li>
+            <li>F. Poulenc — Sonata for Flute and Piano</li>
+            <li>S. Prokofiev — Sonata in D major, Op. 94</li>
+            <li>C. Reinecke — Sonata “Undine”, Op. 167</li>
+            <li>P. Hindemith — Sonata for Flute and Piano</li>
+            <li>L. Liebermann — Sonata for Flute and Piano, Op. 23</li>
+            <li>C.-M. Widor — Suite for Flute and Piano, Op. 34</li>
+            <li>A. Jolivet — Chant de Linos</li>
+            <li>P. Sancan — Sonatine</li>
+            <li>O. Taktakishvili — Sonata</li>
+            <li>J. N. Hummel — Sonata for Flute and Piano</li>
+            <li>P. Juon — Sonata for Flute and Piano</li>
+          </ul>
         </div>
-      </div>
+
+        <div class="rep-subcat">
+          <h4>Flute, Cello &amp; Piano</h4>
+          <ul class="work-list">
+            <li>L. van Beethoven — Trio in B-flat major, Op. 11</li>
+            <li>C. M. von Weber — Trio in E-flat major, Op. 63</li>
+            <li>P. Gaubert — Trois Aquarelles</li>
+            <li>N. Rota — Trio for Flute, Violin (or Cello) and Piano</li>
+            <li>N. Kapustin — Trio, Op. 86</li>
+            <li>G. Sollima — Trio for Flute, Cello and Piano</li>
+            <li>J. Haydn — Trio for Flute, Cello and Piano</li>
+            <li>J. N. Hummel — Adagio, Variations and Rondo</li>
+          </ul>
+        </div>
+
+        <div class="rep-subcat">
+          <h4>Flute Quartets</h4>
+          <ul class="work-list">
+            <li>W. A. Mozart — Flute Quartet in D major, K.285</li>
+            <li>W. A. Mozart — Flute Quartet in G major, K.285a</li>
+            <li>W. A. Mozart — Flute Quartet in C major, K.285b</li>
+            <li>W. A. Mozart — Flute Quartet in A major, K.298</li>
+          </ul>
+        </div>
+
+        <div class="rep-subcat">
+          <h4>Flute &amp; Guitar</h4>
+          <ul class="work-list">
+            <li>A. Piazzolla — <em>Histoire du Tango</em></li>
+            <li>M. Duplessy — “Bird in the City”</li>
+            <li>Ravi Shankar — <em>L’aube enchantée sur le Raga Todi</em></li>
+          </ul>
+        </div>
+
+      </details>
+
+    </div>
+  </div>
     </section>
 
     <section class="section" id="programmes">
