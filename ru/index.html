@@ -356,7 +356,17 @@
       .hero h1 {
         max-width: 100%;
       }
-    }
+    .rep-col:first-child {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  .rep-col:first-child {
+    position: static;
+  }
+}
   </style>
 </head>
 <body>
