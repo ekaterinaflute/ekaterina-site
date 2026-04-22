@@ -290,12 +290,13 @@
       font-size: 18px;
     }
 
-  .footer {
+.footer {
   padding: 34px 0 54px;
   color: var(--muted);
   font-size: 14px;
   border-top: 1px solid var(--line);
 }
+
 .lang-switch {
   position: fixed;
   top: 20px;
@@ -326,7 +327,10 @@
   color: #000;
 }
 
-
+@media (max-width: 900px) {
+  .section {
+    padding: 64px 0;
+  }
 
   .repertoire-grid,
   .programmes,
@@ -353,36 +357,7 @@
     max-width: 100%;
   }
 }
-    @media (max-width: 900px) {
-      .section {
-        padding: 64px 0;
-      }
-
-      .repertoire-grid,
-      .programmes,
-      .video-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .subsection h3,
-      .rep-col h3,
-      .programme-item h3 {
-        font-size: 24px;
-      }
-
-      .subsection p {
-        font-size: 17px;
-      }
-
-      .hero-inner {
-        padding-bottom: 40px;
-      }
-
-      .hero h1 {
-        max-width: 100%;
-      }
-    
+  
   </style>
   
   
