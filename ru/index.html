@@ -153,21 +153,7 @@
       display: block;
     }
 
-    .repertoire-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .rep-col h3 {
-      margin: 0 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
+ 
 
     .rep-subcat {
       margin-top: 32px;
@@ -299,11 +285,7 @@
       border-top: 1px solid var(--line);
     }
 
-    @media (max-width: 900px) {
-      .section {
-        padding: 64px 0;
-      }
-.lang-switch {
+   .lang-switch {
   position: fixed;
   top: 20px;
   right: 24px;
@@ -332,40 +314,77 @@
   background: #fff;
   color: #000;
 }
-      .repertoire-grid,
-      .programmes,
-      .video-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
 
-      .subsection h3,
-      .rep-col h3,
-      .programme-item h3 {
-        font-size: 24px;
-      }
+.repertoire-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-      .subsection p {
-        font-size: 17px;
-      }
+.rep-item {
+  border-top: none;
+  padding-top: 18px;
+}
 
-      .hero-inner {
-        padding-bottom: 40px;
-      }
+.rep-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
 
-      .hero h1 {
-        max-width: 100%;
-      }
-    .rep-col:first-child {
-  position: sticky;
-  top: 2rem;
-  align-self: start;
+.rep-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.rep-item summary::after {
+  content: "+";
+  float: right;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.rep-item[open] summary::after {
+  content: "−";
+}
+
+.rep-item .work-list,
+.rep-item .rep-subcat {
+  margin-top: 22px;
 }
 
 @media (max-width: 900px) {
-  .rep-col:first-child {
-    position: static;
+  .section {
+    padding: 64px 0;
   }
+
+  .programmes,
+  .video-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subsection h3,
+  .programme-item h3,
+  .rep-item summary {
+    font-size: 24px;
+  }
+
+  .subsection p {
+    font-size: 17px;
+  }
+
+  .hero-inner {
+    padding-bottom: 40px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+  }
+}
 }
   </style>
 </head>
@@ -509,87 +528,90 @@
       </div>
     </section>
 
-    <section class="section" id="repertoire">
-      <div class="wrap">
-        <h2 class="section-title">Репертуар</h2>
+    <<section class="section" id="repertoire">
+  <div class="wrap">
+    <h2 class="section-title">Репертуар</h2>
 
-        <div class="repertoire-grid">
-          <div class="rep-col">
-            <h3>Концерты / Оркестр</h3>
-            <ul class="work-list">
-              <li>В. А. Моцарт — Концерт для флейты и арфы до мажор, K.299</li>
-              <li>В. А. Моцарт — Концерт ре мажор, K.314</li>
-              <li>П. Бенуа — Концерт «Симфоническая сказка», Op. 43a</li>
-              <li>К. Райнеке — Концерт ре мажор, Op. 283</li>
-              <li>К. Райнеке — Баллада для флейты с оркестром</li>
-              <li>С. Меркаданте — Концерт ми минор</li>
-              <li>А. Вивальди — Концерт «Il Gardellino», RV 428</li>
-              <li>Й. Гайдн — Концерт для флейты</li>
-              <li>М. Вайнберг — Концерт для флейты с оркестром</li>
-              <li>Ф. Борн / Ж. Бизе — Фантазия на темы из «Кармен»</li>
-              <li>И. С. Бах — Оркестровая сюита № 2 си минор, BWV 1067</li>
-              <li>И. С. Бах — Бранденбургский концерт № 2 фа мажор, BWV 1047</li>
-              <li>И. С. Бах — Бранденбургский концерт № 4 соль мажор, BWV 1049</li>
-            </ul>
-          </div>
+    <div class="repertoire-accordion">
 
-          <div class="rep-col">
-            <h3>Камерная музыка</h3>
+      <details class="rep-item">
+        <summary>Концерты / Оркестр</summary>
+        <ul class="work-list">
+          <li>W. A. Mozart — Концерт для флейты и арфы до мажор, K.299</li>
+          <li>W. A. Mozart — Концерт ре мажор, K.314</li>
+          <li>P. Benoit — Концерт «Symphonic Tale», Op. 43a</li>
+          <li>C. Reinecke — Концерт ре мажор, Op. 283</li>
+          <li>C. Reinecke — Ballade для флейты с оркестром</li>
+          <li>S. Mercadante — Концерт ми минор</li>
+          <li>A. Vivaldi — Концерт «Il Gardellino», RV 428</li>
+          <li>J. Haydn — Концерт для флейты</li>
+          <li>M. Weinberg — Концерт для флейты с оркестром</li>
+          <li>F. Borne / G. Bizet — Carmen Fantasy</li>
+          <li>J. S. Bach — Оркестровая сюита № 2 си минор, BWV 1067</li>
+          <li>J. S. Bach — Бранденбургский концерт № 2 фа мажор, BWV 1047</li>
+          <li>J. S. Bach — Бранденбургский концерт № 4 соль мажор, BWV 1049</li>
+        </ul>
+      </details>
 
-            <div class="rep-subcat">
-              <h4>Флейта и фортепиано</h4>
-              <ul class="work-list">
-                <li>Ф. Шуберт — <em>Trockne Blumen</em></li>
-                <li>Ф. Пуленк — Соната для флейты и фортепиано</li>
-                <li>С. Прокофьев — Соната ре мажор, Op. 94</li>
-                <li>К. Райнеке — Соната «Ундина», Op. 167</li>
-                <li>П. Хиндемит — Соната для флейты и фортепиано</li>
-                <li>Л. Либерман — Соната для флейты и фортепиано, Op. 23</li>
-                <li>Ш.-М. Видор — Сюита для флейты и фортепиано, Op. 34</li>
-                <li>А. Жоливе — Chant de Linos</li>
-                <li>П. Санкан — Sonatine</li>
-                <li>О. Тактакишвили — Соната</li>
-                <li>И. Н. Гуммель — Соната для флейты и фортепиано</li>
-                <li>П. Жюон — Соната для флейты и фортепиано</li>
-              </ul>
-            </div>
+      <details class="rep-item">
+        <summary>Камерная музыка</summary>
 
-            <div class="rep-subcat">
-              <h4>Флейта, виолончель и фортепиано</h4>
-              <ul class="work-list">
-                <li>Л. ван Бетховен — Трио си-бемоль мажор, Op. 11</li>
-                <li>К. М. фон Вебер — Трио ми-бемоль мажор, Op. 63</li>
-                <li>П. Гобер — Trois Aquarelles</li>
-                <li>Н. Рота — Трио для флейты, скрипки (или виолончели) и фортепиано</li>
-                <li>Н. Капустин — Трио, Op. 86</li>
-                <li>Дж. Соллима — Трио для флейты, виолончели и фортепиано</li>
-                <li>Й. Гайдн — Трио для флейты, виолончели и фортепиано</li>
-                <li>И. Н. Гуммель — Adagio, Variations and Rondo</li>
-              </ul>
-            </div>
-
-            <div class="rep-subcat">
-              <h4>Флейтовые квартеты</h4>
-              <ul class="work-list">
-                <li>В. А. Моцарт — Квартет для флейты ре мажор, K.285</li>
-                <li>В. А. Моцарт — Квартет для флейты соль мажор, K.285a</li>
-                <li>В. А. Моцарт — Квартет для флейты до мажор, K.285b</li>
-                <li>В. А. Моцарт — Квартет для флейты ля мажор, K.298</li>
-              </ul>
-            </div>
-
-            <div class="rep-subcat">
-              <h4>Флейта и гитара</h4>
-              <ul class="work-list">
-                <li>А. Пьяццолла — <em>Histoire du Tango</em></li>
-                <li>М. Дюплесси — <em>Bird in the City</em></li>
-                <li>Рави Шанкар — <em>L’aube enchantée sur le Raga Todi</em></li>
-              </ul>
-            </div>
-          </div>
+        <div class="rep-subcat">
+          <h4>Флейта и фортепиано</h4>
+          <ul class="work-list">
+            <li>F. Schubert — <em>Trockne Blumen</em> (Introduction and Variations, D. 802)</li>
+            <li>F. Poulenc — Соната для флейты и фортепиано</li>
+            <li>S. Prokofiev — Соната ре мажор, Op. 94</li>
+            <li>C. Reinecke — Соната «Undine», Op. 167</li>
+            <li>P. Hindemith — Соната для флейты и фортепиано</li>
+            <li>L. Liebermann — Соната для флейты и фортепиано, Op. 23</li>
+            <li>C.-M. Widor — Сюита для флейты и фортепиано, Op. 34</li>
+            <li>A. Jolivet — Chant de Linos</li>
+            <li>P. Sancan — Sonatine</li>
+            <li>O. Taktakishvili — Соната</li>
+            <li>J. N. Hummel — Соната для флейты и фортепиано</li>
+            <li>P. Juon — Соната для флейты и фортепиано</li>
+          </ul>
         </div>
-      </div>
-    </section>
+
+        <div class="rep-subcat">
+          <h4>Флейта, виолончель и фортепиано</h4>
+          <ul class="work-list">
+            <li>L. van Beethoven — Трио си-бемоль мажор, Op. 11</li>
+            <li>C. M. von Weber — Трио ми-бемоль мажор, Op. 63</li>
+            <li>P. Gaubert — Trois Aquarelles</li>
+            <li>N. Rota — Трио для флейты, скрипки (или виолончели) и фортепиано</li>
+            <li>N. Kapustin — Трио, Op. 86</li>
+            <li>G. Sollima — Трио для флейты, виолончели и фортепиано</li>
+            <li>J. Haydn — Трио для флейты, виолончели и фортепиано</li>
+            <li>J. N. Hummel — Adagio, Variations and Rondo</li>
+          </ul>
+        </div>
+
+        <div class="rep-subcat">
+          <h4>Флейтовые квартеты</h4>
+          <ul class="work-list">
+            <li>W. A. Mozart — Флейтовый квартет ре мажор, K.285</li>
+            <li>W. A. Mozart — Флейтовый квартет соль мажор, K.285a</li>
+            <li>W. A. Mozart — Флейтовый квартет до мажор, K.285b</li>
+            <li>W. A. Mozart — Флейтовый квартет ля мажор, K.298</li>
+          </ul>
+        </div>
+
+        <div class="rep-subcat">
+          <h4>Флейта и гитара</h4>
+          <ul class="work-list">
+            <li>A. Piazzolla — <em>Histoire du Tango</em></li>
+            <li>M. Duplessy — “Bird in the City”</li>
+            <li>Ravi Shankar — <em>L’aube enchantée sur le Raga Todi</em></li>
+          </ul>
+        </div>
+
+      </details>
+
+    </div>
+  </div>
+</section>
 
     <section class="section" id="programmes">
       <div class="wrap">
