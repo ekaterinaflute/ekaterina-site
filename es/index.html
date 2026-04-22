@@ -296,7 +296,33 @@
       .section {
         padding: 64px 0;
       }
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
 
+.lang-switch a {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.lang-switch a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.lang-switch a.active {
+  background: #fff;
+  color: #000;
+}
       .repertoire-grid,
       .programmes,
       .video-grid,
