@@ -314,15 +314,17 @@
   top: 20px;
   right: 24px;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   z-index: 1000;
 }
 
-.lang-switch a {
+.lang-switch a,
+.lang-switch a:visited,
+.lang-switch a:active {
   font-size: 12px;
   letter-spacing: 0.08em;
   padding: 4px 6px;
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.5);
   color: #fff;
   text-decoration: none;
   transition: 0.2s ease;
@@ -336,44 +338,75 @@
   background: #fff;
   color: #000;
 }
-    @media (max-width: 900px) {
-      .section {
-        padding: 64px 0;
-      }
 
-      .repertoire-grid,
-      .programmes,
-      .video-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+.repertoire-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-      .subsection h3,
-      .rep-col h3,
-      .programme-item h3 {
-        font-size: 24px;
-      }
+.rep-item {
+  border-top: none;
+  padding-top: 18px;
+}
 
-      .subsection p {
-        font-size: 17px;
-      }
+.rep-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
 
-      .hero-inner {
-        padding-bottom: 40px;
-      }
+.rep-item summary::-webkit-details-marker {
+  display: none;
+}
 
-      .hero h1 {
-        max-width: 100%;
-      }
-    .rep-col:first-child {
-  position: sticky;
-  top: 2rem;
-  align-self: start;
+.rep-item summary::after {
+  content: "+";
+  float: right;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.rep-item[open] summary::after {
+  content: "−";
+}
+
+.rep-item .work-list,
+.rep-item .rep-subcat {
+  margin-top: 22px;
 }
 
 @media (max-width: 900px) {
-  .rep-col:first-child {
-    position: static;
+  .section {
+    padding: 64px 0;
+  }
+
+  .programmes,
+  .video-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subsection h3,
+  .programme-item h3,
+  .rep-item summary {
+    font-size: 24px;
+  }
+
+  .subsection p {
+    font-size: 17px;
+  }
+
+  .hero-inner {
+    padding-bottom: 40px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
   }
 }
   </style>
@@ -520,87 +553,90 @@
       </div>
     </section>
 
-    <section class="section" id="repertoire">
-      <div class="wrap">
-        <h2 class="section-title">Repertorio</h2>
+  <section class="section" id="repertoire">
+  <div class="wrap">
+    <h2 class="section-title">Repertorio</h2>
 
-        <div class="repertoire-grid">
-          <div class="rep-col">
-            <h3>Conciertos / Orquesta</h3>
-            <ul class="work-list">
-              <li>W. A. Mozart — Concierto para flauta y arpa en do mayor, K.299</li>
-              <li>W. A. Mozart — Concierto en re mayor, K.314</li>
-              <li>P. Benoit — Concierto «Symphonic Tale», Op. 43a</li>
-              <li>C. Reinecke — Concierto en re mayor, Op. 283</li>
-              <li>C. Reinecke — Ballade para flauta y orquesta</li>
-              <li>S. Mercadante — Concierto en mi menor</li>
-              <li>A. Vivaldi — Concierto «Il Gardellino», RV 428</li>
-              <li>J. Haydn — Concierto para flauta</li>
-              <li>M. Weinberg — Concierto para flauta y orquesta</li>
-              <li>F. Borne / G. Bizet — Fantasía sobre Carmen</li>
-              <li>J. S. Bach — Suite orquestal n.º 2 en si menor, BWV 1067</li>
-              <li>J. S. Bach — Concierto de Brandeburgo n.º 2 en fa mayor, BWV 1047</li>
-              <li>J. S. Bach — Concierto de Brandeburgo n.º 4 en sol mayor, BWV 1049</li>
-            </ul>
-          </div>
+    <div class="repertoire-accordion">
 
-          <div class="rep-col">
-            <h3>Música de cámara</h3>
+      <details class="rep-item">
+        <summary>Conciertos / Orquesta</summary>
+        <ul class="work-list">
+          <li>W. A. Mozart — Concierto para flauta y arpa en do mayor, K.299</li>
+          <li>W. A. Mozart — Concierto en re mayor, K.314</li>
+          <li>P. Benoit — Concierto «Symphonic Tale», Op. 43a</li>
+          <li>C. Reinecke — Concierto en re mayor, Op. 283</li>
+          <li>C. Reinecke — Ballade para flauta y orquesta</li>
+          <li>S. Mercadante — Concierto en mi menor</li>
+          <li>A. Vivaldi — Concierto «Il Gardellino», RV 428</li>
+          <li>J. Haydn — Concierto para flauta</li>
+          <li>M. Weinberg — Concierto para flauta y orquesta</li>
+          <li>F. Borne / G. Bizet — Fantasía sobre Carmen</li>
+          <li>J. S. Bach — Suite orquestal n.º 2 en si menor, BWV 1067</li>
+          <li>J. S. Bach — Concierto de Brandeburgo n.º 2 en fa mayor, BWV 1047</li>
+          <li>J. S. Bach — Concierto de Brandeburgo n.º 4 en sol mayor, BWV 1049</li>
+        </ul>
+      </details>
 
-            <div class="rep-subcat">
-              <h4>Flauta y piano</h4>
-              <ul class="work-list">
-                <li>F. Schubert — <em>Trockne Blumen</em></li>
-                <li>F. Poulenc — Sonata para flauta y piano</li>
-                <li>S. Prokofiev — Sonata en re mayor, Op. 94</li>
-                <li>C. Reinecke — Sonata «Undine», Op. 167</li>
-                <li>P. Hindemith — Sonata para flauta y piano</li>
-                <li>L. Liebermann — Sonata para flauta y piano, Op. 23</li>
-                <li>C.-M. Widor — Suite para flauta y piano, Op. 34</li>
-                <li>A. Jolivet — Chant de Linos</li>
-                <li>P. Sancan — Sonatine</li>
-                <li>O. Taktakishvili — Sonata</li>
-                <li>J. N. Hummel — Sonata para flauta y piano</li>
-                <li>P. Juon — Sonata para flauta y piano</li>
-              </ul>
-            </div>
+      <details class="rep-item">
+        <summary>Música de cámara</summary>
 
-            <div class="rep-subcat">
-              <h4>Flauta, violonchelo y piano</h4>
-              <ul class="work-list">
-                <li>L. van Beethoven — Trío en si bemol mayor, Op. 11</li>
-                <li>C. M. von Weber — Trío en mi bemol mayor, Op. 63</li>
-                <li>P. Gaubert — Trois Aquarelles</li>
-                <li>N. Rota — Trío para flauta, violín (o violonchelo) y piano</li>
-                <li>N. Kapustin — Trío, Op. 86</li>
-                <li>G. Sollima — Trío para flauta, violonchelo y piano</li>
-                <li>J. Haydn — Trío para flauta, violonchelo y piano</li>
-                <li>J. N. Hummel — Adagio, Variations and Rondo</li>
-              </ul>
-            </div>
-
-            <div class="rep-subcat">
-              <h4>Cuartetos con flauta</h4>
-              <ul class="work-list">
-                <li>W. A. Mozart — Cuarteto con flauta en re mayor, K.285</li>
-                <li>W. A. Mozart — Cuarteto con flauta en sol mayor, K.285a</li>
-                <li>W. A. Mozart — Cuarteto con flauta en do mayor, K.285b</li>
-                <li>W. A. Mozart — Cuarteto con flauta en la mayor, K.298</li>
-              </ul>
-            </div>
-
-            <div class="rep-subcat">
-              <h4>Flauta y guitarra</h4>
-              <ul class="work-list">
-                <li>A. Piazzolla — <em>Histoire du Tango</em></li>
-                <li>M. Duplessy — <em>Bird in the City</em></li>
-                <li>Ravi Shankar — <em>L’aube enchantée sur le Raga Todi</em></li>
-              </ul>
-            </div>
-          </div>
+        <div class="rep-subcat">
+          <h4>Flauta y piano</h4>
+          <ul class="work-list">
+            <li>F. Schubert — <em>Trockne Blumen</em> (Introduction and Variations, D. 802)</li>
+            <li>F. Poulenc — Sonata para flauta y piano</li>
+            <li>S. Prokofiev — Sonata en re mayor, Op. 94</li>
+            <li>C. Reinecke — Sonata «Undine», Op. 167</li>
+            <li>P. Hindemith — Sonata para flauta y piano</li>
+            <li>L. Liebermann — Sonata para flauta y piano, Op. 23</li>
+            <li>C.-M. Widor — Suite para flauta y piano, Op. 34</li>
+            <li>A. Jolivet — Chant de Linos</li>
+            <li>P. Sancan — Sonatine</li>
+            <li>O. Taktakishvili — Sonata</li>
+            <li>J. N. Hummel — Sonata para flauta y piano</li>
+            <li>P. Juon — Sonata para flauta y piano</li>
+          </ul>
         </div>
-      </div>
-    </section>
+
+        <div class="rep-subcat">
+          <h4>Flauta, violonchelo y piano</h4>
+          <ul class="work-list">
+            <li>L. van Beethoven — Trío en si bemol mayor, Op. 11</li>
+            <li>C. M. von Weber — Trío en mi bemol mayor, Op. 63</li>
+            <li>P. Gaubert — Trois Aquarelles</li>
+            <li>N. Rota — Trío para flauta, violín (o violonchelo) y piano</li>
+            <li>N. Kapustin — Trío, Op. 86</li>
+            <li>G. Sollima — Trío para flauta, violonchelo y piano</li>
+            <li>J. Haydn — Trío para flauta, violonchelo y piano</li>
+            <li>J. N. Hummel — Adagio, Variations and Rondo</li>
+          </ul>
+        </div>
+
+        <div class="rep-subcat">
+          <h4>Cuartetos con flauta</h4>
+          <ul class="work-list">
+            <li>W. A. Mozart — Cuarteto con flauta en re mayor, K.285</li>
+            <li>W. A. Mozart — Cuarteto con flauta en sol mayor, K.285a</li>
+            <li>W. A. Mozart — Cuarteto con flauta en do mayor, K.285b</li>
+            <li>W. A. Mozart — Cuarteto con flauta en la mayor, K.298</li>
+          </ul>
+        </div>
+
+        <div class="rep-subcat">
+          <h4>Flauta y guitarra</h4>
+          <ul class="work-list">
+            <li>A. Piazzolla — <em>Histoire du Tango</em></li>
+            <li>M. Duplessy — <em>Bird in the City</em></li>
+            <li>Ravi Shankar — <em>L’aube enchantée sur le Raga Todi</em></li>
+          </ul>
+        </div>
+
+      </details>
+
+    </div>
+  </div>
+</section>
 
     <section class="section" id="programmes">
       <div class="wrap">
